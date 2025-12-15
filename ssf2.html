@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <base href="https://cdn.jsdelivr.net/gh/genizy/super-smash-flash@latest/">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <script>
+        const originalFetch = window.fetch;
+        window.fetch = async function (url, ...args) {
+            if (url instanceof Request) {
+                if (url.url.endsWith("DAT184.ssf")) {
+                    return originalFetch("https://raw.githubusercontent.com/genizy/super-smash-flash/refs/heads/main/data/DAT184.ssf", ...args);
+                }
+            }
+            return originalFetch(url, ...args);
+        };
+    </script>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/gh/u-cvlassrom-y/google@main/ruffle.js"></script>
+
+<object width="100%" height="100%">
+    <param name="movie" value="https://cdn.jsdelivr.net/gh/genizy/super-smash-flash@latest/ssf2.swf">
+    <embed src="https://cdn.jsdelivr.net/gh/genizy/super-smash-flash@latest/ssf2.swf" width="100%" height="100%">
+</body>
+</html>
